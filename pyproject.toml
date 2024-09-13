@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "aichatassist"
+version = "0.1.0"
+description = "an AI Chat assistant, starting from slack, where the assistant will be able to assist you finding information in your previous chats and then in the channels you have access to, summarising, synthesising and answering questions."
+authors = ["Roland Abou Younes <roland@abouyounes.com>"]
+license = "Apache2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
