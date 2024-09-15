@@ -26,6 +26,7 @@ This guide provides a step-by-step approach to setting up a simple microservice 
     - [**3. Implement Service Logic**](#3-implement-service-logic)
     - [**4. Adjust Dependencies**](#4-adjust-dependencies)
     - [**5. Build and Run the Service**](#5-build-and-run-the-service)
+    - [**6. Update Pre-commit Configuration**](#6-update-pre-commit-configuration)
   - [**Best Practices**](#best-practices)
   - [**Conclusion**](#conclusion)
   - [**Appendix: Full Code Listings**](#appendix-full-code-listings)
@@ -290,6 +291,42 @@ docker run -p 8000:8000 new_microservice:latest
 
 - Map the container's port 8000 to your host machine's port 8000.
 - Adjust the port numbers as needed if running multiple services.
+
+### **6. Update Pre-commit Configuration**
+
+When adding a new microservice to the project, it's important to update the pre-commit configuration to ensure that the tests for the new microservice are run as part of the pre-commit checks.
+
+To do this, follow these steps:
+
+1. Open the `.pre-commit-config.yaml` file in the project root.
+
+2. Locate the `repos` section and find the `local` repository configuration.
+
+3. Add a new hook for the new microservice, following the pattern of the existing hooks. For example:
+
+   ```yaml
+   - repo: local
+     hooks:
+       # ...existing hooks...
+
+       - id: pytest-new-microservice
+         name: pytest-new-microservice
+         entry: bash microservices/new_microservice/run_tests.sh
+         language: system
+         types: [python]
+         files: ^microservices/new_microservice/tests/
+   ```
+
+   - Replace `new_microservice` with the actual name of your new microservice directory.
+   - Adjust the `entry` command to match the test script location and name for your new microservice.
+
+4. Save the changes to the `.pre-commit-config.yaml` file.
+
+By adding this new hook, pre-commit will now run the tests for your new microservice whenever you commit changes that affect the files within the `microservices/new_microservice/tests/` directory.
+
+Remember to create a `run_tests.sh` script (or equivalent) within your new microservice directory to execute the tests using the appropriate command (e.g., `poetry run pytest`).
+
+Updating the pre-commit configuration ensures that the tests for all microservices, including the newly added one, are run consistently as part of the pre-commit checks, helping maintain code quality and catch potential issues early in the development process.
 
 ---
 

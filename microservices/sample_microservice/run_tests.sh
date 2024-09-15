@@ -1,7 +1,10 @@
 #!/bin/bash
 
+# Get the directory of the current script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # Navigate to the microservice directory
-cd microservices/sample_microservice
+cd "$SCRIPT_DIR"
 
 # Set up the environment using Poetry
 poetry install
