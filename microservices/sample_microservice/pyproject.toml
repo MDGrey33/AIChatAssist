@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "aichatassist"
+name = "sample_microservice"
 version = "0.1.0"
-description = "an AI Chat assistant, starting from slack, where the assistant will be able to assist you finding information in your previous chats and then in the channels you have access to, summarising, synthesising and answering questions."
+description = "Sample microservice for AI Chat Assistant"
 authors = ["Roland Abou Younes <roland@abouyounes.com>"]
 license = "Apache2.0"
 readme = "README.md"
@@ -10,7 +10,6 @@ readme = "README.md"
 python = "^3.12"
 pytest = "^8.3.3"
 fastapi = "^0.114.2"
-
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.8.0"
