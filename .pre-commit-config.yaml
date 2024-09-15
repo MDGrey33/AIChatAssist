@@ -23,6 +23,14 @@ repos:
     hooks:
       - id: pytest
         name: pytest
-        entry: pytest
+        entry: poetry run pytest
         language: system
         types: [python]
+        exclude: ^microservices/sample_microservice/
+
+      - id: pytest-microservice
+        name: pytest-microservice
+        entry: bash microservices/sample_microservice/run_tests.sh
+        language: system
+        types: [python]
+        files: ^microservices/sample_microservice/tests/

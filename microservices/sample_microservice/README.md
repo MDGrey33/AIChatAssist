@@ -13,26 +13,19 @@ A simple microservice boilerplate for POC projects using FastAPI and Poetry.
 
 ### Installation
 
-1. **Clone the Repository**
-
-   ```bash
-   git clone https://github.com/yourusername/project_root.git
-   cd project_root/microservices/sample_microservice
-   ```
-
-2. **Install Dependencies**
+1. **Install Dependencies**
 
    ```bash
    poetry install
    ```
 
-3. **Run the Application**
+2. **Run the Application**
 
    ```bash
    poetry run uvicorn app.main:app --reload
    ```
 
-4. **Build and Run with Docker**
+3. **Build and Run with Docker**
 
    ```bash
    docker build -t sample_microservice:latest .
