@@ -14,11 +14,11 @@ EXPECTED_STRUCTURE = [
     "README.md",
     "poetry.lock",
     "docker-compose.yml",
-    "context_retrieval_service",
-    "conversation_assistant_service",
-    "shared",
-    "slack_auth_service",
-    "slackbot_integration",
+    "microservices/context_retrieval/",
+    "microservices/conversation_assistant/",
+    "microservices/shared/",
+    "microservices/slack_auth/",
+    "microservices/slackbot_integration/",
 ]
 
 
