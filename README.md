@@ -41,7 +41,7 @@ This project is in early development. To get started, follow these steps:
 
 1. **Clone the Repository:**
     ```sh
-    git clone https://github.com/yourusername/AIChatAssist.git
+    git clone https://github.com/MDGrey33/AIChatAssist
     cd AIChatAssist
     ```
 
